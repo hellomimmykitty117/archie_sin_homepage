@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冼靖峰 Archie Sin | Official Fan Club & Discography</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FF2A85',
+                            purple: '#8A2BE2',
+                            gold: '#FFD700',
+                            dark: '#0B0C10',
+                            card: 'rgba(23, 25, 35, 0.75)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 2.5s infinite alternate',
+                        'float': 'float 4s ease-in-out infinite',
+                        'equalizer': 'equalizer 1s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 15px rgba(255, 42, 133, 0.4)' },
+                            '100%': { boxShadow: '0 0 35px rgba(138, 43, 226, 0.8)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        equalizer: {
+                            '0%': { height: '15%' },
+                            '100%': { height: '100%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #080810;
+            color: #E2E8F0;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(255, 42, 133, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(138, 43, 226, 0.15) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .glass-panel {
+            background: rgba(20, 22, 36, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(30, 32, 50, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 42, 133, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(255, 42, 133, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #FF69B4 0%, #DA70D6 50%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #FF2A85, #8A2BE2);
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 42, 133, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0C10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D3748;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF2A85;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between font-sans overflow-x-hidden selection:bg-brand-pink selection:text-white">
+
+    <!-- Background Decorative Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-brand-pink/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-purple/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+
+    <!-- Header / Navigation Banner -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/10 px-4 lg:px-8 py-3">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            
+            <!-- Logo / Brand -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('profile')">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-pink to-brand-purple p-[2px] animate-pulse-glow">
+                    <div class="w-full h-full bg-black rounded-full flex items-center justify-center font-bold text-brand-pink">
+                        A
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-xl tracking-wider text-white flex items-center gap-2">
+                        冼靖峰 <span class="text-xs px-2 py-0.5 rounded-full bg-brand-pink/20 text-brand-pink border border-brand-pink/40 font-normal">Archie Sin</span>
+                    </h1>
+                    <p class="text-[10px] text-gray-400 tracking-widest uppercase">Official Fan Universe</p>
+                </div>
+            </div>
+
+            <!-- Tab Switcher Icons (Core Requirement) -->
+            <nav class="flex items-center bg-black/40 p-1.5 rounded-full border border-white/10">
+                <!-- Icon 1: Profile & Photo -->
+                <button id="nav-profile" onclick="switchTab('profile')" class="nav-btn active flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">
+                    <i class="fa-solid fa-user-astronaut text-base"></i>
+                    <span class="hidden sm:inline">個人資料及近照</span>
+                </button>
+                
+                <!-- Icon 2: Playlist -->
+                <button id="nav-playlist" onclick="switchTab('playlist')" class="nav-btn text-gray-300 hover:text-white flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">
+                    <i class="fa-solid fa-compact-disc text-base animate-spin-slow"></i>
+                    <span class="hidden sm:inline">個人歌單</span>
+                </button>
+            </nav>
+
+            <!-- Quick Action / Fan Cheer -->
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="addCheer(event)" class="relative group bg-gradient-to-r from-brand-pink to-brand-purple hover:from-brand-purple hover:to-brand-pink text-white px-4 py-2 rounded-full text-xs font-bold transition-all shadow-lg hover:shadow-brand-pink/50 flex items-center gap-2 active:scale-95">
+                    <i class="fa-solid fa-heart text-amber-300 group-hover:scale-125 transition-transform"></i>
+                    <span>為 Archie 應援</span>
+                    <span id="cheer-badge" class="bg-white/20 px-2 py-0.5 rounded-full text-[10px]">1,280</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 flex-grow max-w-6xl w-full mx-auto px-4 py-8">
+
+        <!-- ================= SECTION 1: PROFILE & PHOTO ================= -->
+        <section id="section-profile" class="space-y-8 transition-all duration-500">
+            
+            <!-- Hero Spotlight Banner -->
+            <div class="glass-panel rounded-3xl p-6 lg:p-10 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-brand-pink/20 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left: Attachment Photo Container (附件一相片) -->
+                    <div class="lg:col-span-5 flex flex-col items-center">
+                        <div class="relative group w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden border-2 border-brand-pink/30 shadow-2xl bg-black/50">
+                            
+                            <!-- Display Photo (附件一相片) -->
+                            <img id="main-photo" src="https://placehold.co/600x800/1a102f/ff2a85?text=%E6%B1%80%E9%9D%96%E5%B3%B0+Archie%0A%E3%80%90%E9%99%84%E4%BB%B6%E4%B8%80%E7%9B%B8%E7%89%87%E3%80%91" 
+                                 alt="冼靖峰 Archie Sin 近照 - 附件一相片" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            
+                            <!-- Image Overlay Badge -->
+                            <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-semibold text-brand-pink flex items-center gap-1.5">
+                                <i class="fa-solid fa-camera"></i> 附件一相片 · 近照展示
+                            </div>
+
+                            <!-- Interactive Photo Controls -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
+                                <button onclick="openModal()" class="bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-2.5 rounded-full transition-colors" title="查看大圖">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                                
+                                <label class="bg-brand-pink hover:bg-brand-pink/80 text-white text-xs px-3 py-2 rounded-xl cursor-pointer transition-colors flex items-center gap-2 shadow-lg">
+                                    <i class="fa-solid fa-upload"></i> 更換附件圖片
+                                    <input type="file" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                                </label>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-3 text-center">
+                            <i class="fa-solid fa-circle-info text-brand-pink mr-1"></i> 可點擊圖片放大預覽或更換自訂相片
+                        </p>
+                    </div>
+
+                    <!-- Right: Bio Information -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-brand-pink/20 to-brand-purple/20 text-brand-pink text-xs font-bold tracking-widest uppercase mb-2 border border-brand-pink/30">
+                                Hong Kong Singer & Artist
+                            </div>
+                            <h2 class="text-4xl lg:text-5xl font-black text-white tracking-tight">
+                                冼靖峰 <span class="text-gradient">Archie Sin</span>
+                            </h2>
+                            <p class="text-gray-300 text-sm lg:text-base mt-3 leading-relaxed">
+                                香港男歌手，憑藉深厚清亮且具震撼力的歌唱實力深受歌迷喜愛。2021年參加《聲夢傳奇》獲得關注，發行多首熱播單曲，持續以溫暖動人的歌聲陪伴每位聽眾。
+                            </p>
+                        </div>
+
+                        <!-- Profile Highlights Cards -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div class="glass-card p-3 rounded-xl border border-white/5">
+                                <div class="text-xs text-gray-400">生日 / 星座</div>
+                                <div class="text-sm font-bold text-white mt-1">5月15日 · 金牛座</div>
+                            </div>
+                            <div class="glass-card p-3 rounded-xl border border-white/5">
+                                <div class="text-xs text-gray-400">出道作品</div>
+                                <div class="text-sm font-bold text-brand-pink mt-1">《一個人的幸運》</div>
+                            </div>
+                            <div class="glass-card p-3 rounded-xl border border-white/5">
+                                <div class="text-xs text-gray-400">專長與聲線</div>
+                                <div class="text-sm font-bold text-white mt-1">抒情流行 / 爆發力高音</div>
+                            </div>
+                            <div class="glass-card p-3 rounded-xl border border-white/5">
+                                <div class="text-xs text-gray-400">粉絲名稱</div>
+                                <div class="text-sm font-bold text-amber-300 mt-1">弓箭手 (Archers)</div>
+                            </div>
+                            <div class="glass-card p-3 rounded-xl border border-white/5">
+                                <div class="text-xs text-gray-400">歌唱賽事</div>
+                                <div class="text-sm font-bold text-white mt-1">《聲夢傳奇》第四名</div>
+                            </div>
+                            <div class="glass-card p-3 rounded-xl border border-white/5">
+                                <div class="text-xs text-gray-400">音樂風格</div>
+                                <div class="text-sm font-bold text-purple-300 mt-1">Pop, Ballad, Rock</div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links & Fan Action (Official Instagram Link Included) -->
+                        <div class="pt-2 flex flex-wrap items-center gap-3">
+                            <a href="https://www.instagram.com/archie_sin?psln=bmo5dG93cWI1cmR2" target="_blank" rel="noopener noreferrer" class="glass-card px-4 py-2.5 rounded-xl text-xs font-semibold text-white hover:text-brand-pink flex items-center gap-2 border border-white/10 group">
+                                <i class="fa-brands fa-instagram text-lg text-pink-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Instagram <span class="text-gray-400 font-normal">@archie_sin</span></span>
+                            </a>
+                            <a href="https://www.youtube.com/results?search_query=%E6%B1%80%E9%9D%96%E5%B3%B0" target="_blank" rel="noopener noreferrer" class="glass-card px-4 py-2.5 rounded-xl text-xs font-semibold text-white hover:text-red-500 flex items-center gap-2 border border-white/10 group">
+                                <i class="fa-brands fa-youtube text-lg text-red-500 group-hover:scale-110 transition-transform"></i> YouTube 頻道
+                            </a>
+                            <button onclick="switchTab('playlist')" class="bg-gradient-to-r from-brand-pink to-brand-purple text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:shadow-lg hover:shadow-brand-pink/30 transition-all flex items-center gap-2 ml-auto">
+                                聆聽個人單曲 <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charm Points & Milestones Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 rounded-2xl relative overflow-hidden">
+                    <div class="text-brand-pink text-2xl mb-3"><i class="fa-solid fa-microphone-lines"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">純粹歌聲魅力</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Archie 擁有極具辨識度的溫暖音色，對情感細節掌控細膩，無論抒情慢歌抑或高亢歌曲皆能演繹出獨特感染力。
+                    </p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl relative overflow-hidden">
+                    <div class="text-brand-purple text-2xl mb-3"><i class="fa-solid fa-award"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">音樂里程碑</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        首支單曲《一個人的幸運》獲得極高迴響，後續推出多元曲風作品，展現持續突破自我與精進歌唱技巧的實力。
+                    </p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl relative overflow-hidden">
+                    <div class="text-amber-300 text-2xl mb-3"><i class="fa-solid fa-sparkles"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">全方位發展</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        除音樂創作與演唱外，亦涉獵戲劇拍攝與節目主持，展現真誠親和且極具潛力的多棲藝人魅力。
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= SECTION 2: DISCOGRAPHYS & PLAYLIST ================= -->
+        <section id="section-playlist" class="space-y-8 hidden transition-all duration-500">
+            
+            <!-- Section Header & Mini Player Mockup -->
+            <div class="glass-panel p-6 lg:p-8 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pink/20 text-brand-pink text-xs font-bold mb-2">
+                        <i class="fa-solid fa-music"></i> Discography & Singles
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-white">冼靖峰 Archie · <span class="text-gradient">個人歌單</span></h2>
+                    <p class="text-xs text-gray-400 mt-1">點擊單曲卡片上的播放按鈕，可直接於 YouTube 開啟官方歌曲聆聽</p>
+                </div>
+
+                <!-- Interactive Player Visualizer Mockup -->
+                <div class="w-full md:w-auto bg-black/40 border border-white/10 p-4 rounded-2xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-pink to-brand-purple flex items-center justify-center text-white shadow-lg animate-pulse">
+                        <i class="fa-solid fa-headphones text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-white" id="now-playing-title">選取歌曲進行播放</div>
+                        <div class="text-[10px] text-gray-400">冼靖峰 Archie Sin</div>
+                        <!-- Animated Equalizer Bars -->
+                        <div class="flex items-end gap-1 h-3 mt-1.5">
+                            <span class="w-1 bg-brand-pink rounded-full h-full animate-equalizer" style="animation-duration: 0.8s;"></span>
+                            <span class="w-1 bg-brand-purple rounded-full h-2/3 animate-equalizer" style="animation-duration: 1.2s;"></span>
+                            <span class="w-1 bg-amber-300 rounded-full h-4/5 animate-equalizer" style="animation-duration: 0.6s;"></span>
+                            <span class="w-1 bg-brand-pink rounded-full h-1/2 animate-equalizer" style="animation-duration: 1s;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Songs Grid Container (5 Specified Tracks) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Song 1: 《一個人的幸運》 -->
+                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 group">
+                    <div class="flex items-start justify-between">
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-500 to-rose-700 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-clover text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] bg-brand-pink/20 text-brand-pink font-semibold px-2.5 py-1 rounded-full border border-brand-pink/30">
+                            首支出道單曲
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-pink transition-colors">《一個人的幸運》</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+                            冼靖峰正式出道的個人單曲，以溫柔誠懇的歌聲唱出孤獨中的感悟與希望，扣人心弦。
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-gray-400"><i class="fa-solid fa-clock mr-1"></i> Solo Single</span>
+                        <a href="https://www.youtube.com/results?search_query=%E6%B1%80%E9%9D%96%E5%B3%B0+%E4%B8%80%E5%80%8B%E4%BA%BA%E7%9A%84%E5%B9%B8%E9%81%8B" 
+                           target="_blank" 
+                           onclick="playSong('《一個人的幸運》')"
+                           class="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 rounded-xl font-semibold transition-all flex items-center gap-1.5 shadow-lg shadow-red-600/30">
+                            <i class="fa-brands fa-youtube"></i> YouTube 播放
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Song 2: 《Bug Fix》 -->
+                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 group">
+                    <div class="flex items-start justify-between">
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-800 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-bug text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] bg-purple-500/20 text-purple-300 font-semibold px-2.5 py-1 rounded-full border border-purple-500/30">
+                            快節奏/突破曲風
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">《Bug Fix》</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+                            展現不同以往的動感與節奏感，將現代人的情感亂碼與修正過程比喻為程式修復。
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-gray-400"><i class="fa-solid fa-clock mr-1"></i> Solo Single</span>
+                        <a href="https://www.youtube.com/results?search_query=%E6%B1%80%E9%9D%96%E5%B3%B0+Bug+Fix" 
+                           target="_blank" 
+                           onclick="playSong('《Bug Fix》')"
+                           class="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 rounded-xl font-semibold transition-all flex items-center gap-1.5 shadow-lg shadow-red-600/30">
+                            <i class="fa-brands fa-youtube"></i> YouTube 播放
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Song 3: 《無意冒犯》 -->
+                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 group">
+                    <div class="flex items-start justify-between">
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-800 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-shield-halved text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] bg-blue-500/20 text-blue-300 font-semibold px-2.5 py-1 rounded-full border border-blue-500/30">
+                            深情抒情強打
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">《無意冒犯》</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+                            細緻描繪內心拉扯與小心翼翼的情感邊界，Archie 以真摯嗓音帶領聽眾感受愛裡的克制與試探。
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-gray-400"><i class="fa-solid fa-clock mr-1"></i> Solo Single</span>
+                        <a href="https://www.youtube.com/results?search_query=%E6%B1%80%E9%9D%96%E5%B3%B0+%E7%84%A1%E2%BD%88%E2%BD%9A%E7%8A%AF" 
+                           target="_blank" 
+                           onclick="playSong('《無意冒犯》')"
+                           class="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 rounded-xl font-semibold transition-all flex items-center gap-1.5 shadow-lg shadow-red-600/30">
+                            <i class="fa-brands fa-youtube"></i> YouTube 播放
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Song 4: 《勇氣》 -->
+                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 group">
+                    <div class="flex items-start justify-between">
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-orange-700 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-fire text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-semibold px-2.5 py-1 rounded-full border border-amber-500/30">
+                            勵志熱血單曲
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">《勇氣》</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+                            充滿爆發力與希望感的作品，歌詞傳遞面對挫折與追尋夢想時永不放棄的堅定勇氣。
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-gray-400"><i class="fa-solid fa-clock mr-1"></i> Solo Single</span>
+                        <a href="https://www.youtube.com/results?search_query=%E6%B1%80%E9%9D%96%E5%B3%B0+%E5%8B%87%E6%B0%A3" 
+                           target="_blank" 
+                           onclick="playSong('《勇氣》')"
+                           class="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 rounded-xl font-semibold transition-all flex items-center gap-1.5 shadow-lg shadow-red-600/30">
+                            <i class="fa-brands fa-youtube"></i> YouTube 播放
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Song 5: 《由天台記載》 -->
+                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 group md:col-span-2 lg:col-span-1">
+                    <div class="flex items-start justify-between">
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-building text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold px-2.5 py-1 rounded-full border border-emerald-500/30">
+                            青春懷舊風
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">《由天台記載》</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+                            以天台為意象記載青春夢想與成長軌跡，韻味悠長，令人回味無窮的感人佳作。
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-gray-400"><i class="fa-solid fa-clock mr-1"></i> Solo Single</span>
+                        <a href="https://www.youtube.com/results?search_query=%E6%B1%80%E9%9D%96%E5%B3%B0+%E7%94%B1%E5%A4%A9%E5%8F%B0%E8%A8%98%E8%BD%BD" 
+                           target="_blank" 
+                           onclick="playSong('《由天台記載》')"
+                           class="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-2 rounded-xl font-semibold transition-all flex items-center gap-1.5 shadow-lg shadow-red-600/30">
+                            <i class="fa-brands fa-youtube"></i> YouTube 播放
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= FAN ENGAGEMENT & MESSAGE BOARD ================= -->
+        <section class="mt-12 glass-panel p-6 lg:p-8 rounded-3xl">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-comments text-brand-pink"></i> 弓箭手留言板 (Fan Message Board)
+                    </h3>
+                    <p class="text-xs text-gray-400 mt-1">寫下你想對 Archie 說的話，為他加油打氣！</p>
+                </div>
+                <!-- Support Counter Display -->
+                <div class="flex items-center gap-3 bg-black/40 px-5 py-2.5 rounded-full border border-white/10">
+                    <span class="text-xs text-gray-300">總應援次數：</span>
+                    <span id="total-cheers" class="text-xl font-black text-brand-pink">12,805</span>
+                    <i class="fa-solid fa-heart text-brand-pink animate-bounce"></i>
+                </div>
+            </div>
+
+            <!-- Comment Input Box -->
+            <div class="space-y-3 mb-6">
+                <div class="flex gap-2">
+                    <input type="text" id="fan-name" placeholder="您的暱稱" class="bg-black/50 border border-white/10 text-xs text-white rounded-xl px-4 py-2.5 focus:outline-none focus:border-brand-pink w-1/3">
+                    <input type="text" id="fan-msg" placeholder="輸入給 Archie 的祝福..." class="bg-black/50 border border-white/10 text-xs text-white rounded-xl px-4 py-2.5 focus:outline-none focus:border-brand-pink flex-grow">
+                </div>
+                <button onclick="postComment()" class="w-full bg-gradient-to-r from-brand-pink to-brand-purple hover:opacity-90 text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-md">
+                    發送應援留言
+                </button>
+            </div>
+
+            <!-- Fan Comments List -->
+            <div id="comments-container" class="space-y-3 max-h-60 overflow-y-auto pr-2">
+                <div class="bg-white/5 p-3 rounded-xl border border-white/5 flex items-start justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-brand-pink">Archie_Fan_HK <span class="text-[10px] text-gray-500 font-normal">· 剛剛</span></div>
+                        <div class="text-xs text-gray-200 mt-1">《一個人的幸運》真的陪伴我度過好多夜晚，Archie 繼續加油！</div>
+                    </div>
+                    <span class="text-xs text-amber-300"><i class="fa-solid fa-star"></i></span>
+                </div>
+                <div class="bg-white/5 p-3 rounded-xl border border-white/5 flex items-start justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-purple-300">弓箭手一號 <span class="text-[10px] text-gray-500 font-normal">· 10分鐘前</span></div>
+                        <div class="text-xs text-gray-200 mt-1">期待更多新單曲，超喜歡《Bug Fix》的曲風！唱功越來越厲害了！</div>
+                    </div>
+                    <span class="text-xs text-amber-300"><i class="fa-solid fa-star"></i></span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Photo Zoom Preview Modal (附件一放大預覽) -->
+    <div id="photo-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative max-w-3xl w-full flex flex-col items-center">
+            <button onclick="closeModal()" class="absolute -top-10 right-0 text-white text-2xl hover:text-brand-pink transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-img" src="" alt="附件一相片大圖" class="max-h-[80vh] w-auto rounded-2xl border border-white/20 shadow-2xl object-contain">
+            <p class="text-xs text-gray-300 mt-4 text-center">冼靖峰 Archie Sin · 附件一近照預覽</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative z-10 glass-panel border-t border-white/10 mt-12 py-6 text-center text-xs text-gray-500">
+        <div class="max-w-6xl mx-auto px-4 space-y-3">
+            <div class="flex justify-center items-center gap-4">
+                <a href="https://www.instagram.com/archie_sin?psln=bmo5dG93cWI1cmR2" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-pink transition-colors flex items-center gap-1.5 text-xs">
+                    <i class="fa-brands fa-instagram text-base text-pink-500"></i> @archie_sin
+                </a>
+                <span class="text-gray-700">|</span>
+                <a href="https://www.youtube.com/results?search_query=%E6%B1%80%E9%9D%96%E5%B3%B0" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors flex items-center gap-1.5 text-xs">
+                    <i class="fa-brands fa-youtube text-base text-red-500"></i> 冼靖峰 Archie Sin
+                </a>
+            </div>
+            <p>© 2026 冼靖峰 Archie Sin Fan Universe | Designed for Fans & Music Lovers</p>
+            <p class="text-[10px] text-gray-600">圖片與音樂作品版權歸原唱片公司及藝人所有</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Tab Switcher Logic (Icon 1 & Icon 2)
+        function switchTab(tab) {
+            const profileSec = document.getElementById('section-profile');
+            const playlistSec = document.getElementById('section-playlist');
+            const navProfile = document.getElementById('nav-profile');
+            const navPlaylist = document.getElementById('nav-playlist');
+
+            if (tab === 'profile') {
+                profileSec.classList.remove('hidden');
+                playlistSec.classList.add('hidden');
+                navProfile.classList.add('active');
+                navProfile.classList.remove('text-gray-300');
+                navPlaylist.classList.remove('active');
+                navPlaylist.classList.add('text-gray-300');
+            } else {
+                profileSec.classList.add('hidden');
+                playlistSec.classList.remove('hidden');
+                navPlaylist.classList.add('active');
+                navPlaylist.classList.remove('text-gray-300');
+                navProfile.classList.remove('active');
+                navProfile.classList.add('text-gray-300');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle Custom Image Upload for 附件一相片
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('main-photo').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Modal Photo Preview Logic
+        function openModal() {
+            const currentSrc = document.getElementById('main-photo').src;
+            document.getElementById('modal-img').src = currentSrc;
+            document.getElementById('photo-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('photo-modal').classList.add('hidden');
+        }
+
+        // Music Player Interactive Status Update
+        function playSong(songName) {
+            document.getElementById('now-playing-title').innerText = '正在跳轉播放：' + songName;
+        }
+
+        // Support Cheer Counter Logic
+        let cheerCount = 12805;
+        function addCheer(event) {
+            cheerCount++;
+            document.getElementById('total-cheers').innerText = cheerCount.toLocaleString();
+            document.getElementById('cheer-badge').innerText = cheerCount.toLocaleString();
+            
+            // Create Floating Hearts Animation Effect
+            const btn = event.currentTarget;
+            const heart = document.createElement('i');
+            heart.className = 'fa-solid fa-heart text-brand-pink absolute text-lg pointer-events-none animate-ping';
+            btn.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        }
+
+        // Fan Comment Submission Logic
+        function postComment() {
+            const nameInput = document.getElementById('fan-name');
+            const msgInput = document.getElementById('fan-msg');
+            const container = document.getElementById('comments-container');
+
+            if (!nameInput.value.trim() || !msgInput.value.trim()) {
+                alert('請填寫暱稱與應援留言！');
+                return;
+            }
+
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'bg-white/5 p-3 rounded-xl border border-white/5 flex items-start justify-between transition-all animate-pulse';
+            commentDiv.innerHTML = `
+                <div>
+                    <div class="text-xs font-bold text-brand-pink">${escapeHtml(nameInput.value)} <span class="text-[10px] text-gray-500 font-normal">· 剛剛</span></div>
+                    <div class="text-xs text-gray-200 mt-1">${escapeHtml(msgInput.value)}</div>
+                </div>
+                <span class="text-xs text-amber-300"><i class="fa-solid fa-heart text-brand-pink"></i></span>
+            `;
+
+            container.prepend(commentDiv);
+            msgInput.value = '';
+            
+            setTimeout(() => {
+                commentDiv.classList.remove('animate-pulse');
+            }, 1000);
+        }
+
+        // Helper function to escape HTML
+        function escapeHtml(text) {
+            return text.replace(/[&<>"']/g, function(m) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                }[m];
+            });
+        }
+    </script>
+</body>
+</html>
